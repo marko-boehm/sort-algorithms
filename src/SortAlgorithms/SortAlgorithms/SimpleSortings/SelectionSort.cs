@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SortAlgorithms
+namespace SortAlgorithms.SimpleSortings
 {
     /// <summary>
     /// https://en.wikipedia.org/wiki/Selection_sort

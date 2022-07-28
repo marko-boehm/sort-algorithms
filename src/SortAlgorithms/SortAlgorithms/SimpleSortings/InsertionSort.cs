@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SortAlgorithms
+namespace SortAlgorithms.SimpleSortings
 {
     /// <summary>
     /// Wiki: https://en.wikipedia.org/wiki/Insertion_sort
@@ -18,7 +18,7 @@ namespace SortAlgorithms
             sortedList[0] = list[0];
             int index;
             int sortValue;
-            
+
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
 
@@ -27,9 +27,9 @@ namespace SortAlgorithms
             {
                 sortedList[i] = list[i];
                 sortValue = sortedList[i];
-                index = i - 1;               
+                index = i - 1;
 
-                while (index >= 0 && sortedList[index] > sortValue )
+                while (index >= 0 && sortedList[index] > sortValue)
                 {
                     sortedList[index + 1] = sortedList[index];
                     index--;

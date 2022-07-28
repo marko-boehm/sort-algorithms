@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SortAlgorithms
+namespace SortAlgorithms.SimpleSortings
 {
     /// <summary>
     /// Wiki: https://en.wikipedia.org/wiki/Bubble_sort
@@ -19,7 +19,7 @@ namespace SortAlgorithms
 
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            
+
             // Algorithm for Bubble Sort
             while (index > 0)
             {
@@ -34,7 +34,7 @@ namespace SortAlgorithms
             }
 
             stopwatch.Stop();
-            Console.WriteLine("Bubble Sort elapsed time(ms) / ticks:\t {0,10} \t {1,15}" , stopwatch.ElapsedMilliseconds , stopwatch.ElapsedTicks);
+            Console.WriteLine("Bubble Sort elapsed time(ms) / ticks:\t {0,10} \t {1,15}", stopwatch.ElapsedMilliseconds, stopwatch.ElapsedTicks);
             return sortedList;
         }
 
