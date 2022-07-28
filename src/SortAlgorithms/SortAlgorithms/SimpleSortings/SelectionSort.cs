@@ -12,9 +12,9 @@ namespace SortAlgorithms.SimpleSortings
     /// </summary>
     internal class SelectionSort : ISort
     {
-        public int[] Sort(int[] list)
+        public int[] Sort(int[] arrayToSort)
         {
-            int[] sortedList = (int[])list.Clone();
+            int[] sortedArray = (int[])arrayToSort.Clone();
             int minIndex;
             int minVal;
 
@@ -22,24 +22,24 @@ namespace SortAlgorithms.SimpleSortings
             stopwatch.Start();
 
             // Algorithm for Selection Sort
-            for (int i = 0; i < sortedList.Length; i++)
+            for (int i = 0; i < sortedArray.Length; i++)
             {
                 minIndex = i;
-                minVal = sortedList[i];
-                for (int j = i + 1; j < sortedList.Length; j++)
+                minVal = sortedArray[i];
+                for (int j = i + 1; j < sortedArray.Length; j++)
                 {
-                    if (sortedList[j] < minVal)
+                    if (sortedArray[j] < minVal)
                     {
                         minIndex = j;
-                        minVal = sortedList[j];
+                        minVal = sortedArray[j];
                     }
                 }
-                Swap(sortedList, i, minIndex);
+                Swap(sortedArray, i, minIndex);
             }
 
             stopwatch.Stop();
             Console.WriteLine("Selection Sort elapsed time(ms) / ticks: {0,10} \t {1,15}", stopwatch.ElapsedMilliseconds, stopwatch.ElapsedTicks);
-            return sortedList;
+            return sortedArray;
         }
 
         private void Swap(int[] sortedList, int i, int j)

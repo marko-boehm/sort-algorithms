@@ -11,17 +11,17 @@ namespace SortAlgorithms.DivideAndConquerSortings
     {
         public int[] Sort(int[] arrayToSort)
         {
-            int[] sortedList = (int[])arrayToSort.Clone();
+            int[] sortedArray = (int[])arrayToSort.Clone();
 
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
 
             //Algorithm
-            DivideSortMerge(sortedList, 0, sortedList.Length - 1);
+            DivideSortMerge(sortedArray, 0, sortedArray.Length - 1);
 
             stopwatch.Stop();
             Console.WriteLine("Merge Sort elapsed time(ms) / ticks:\t {0,10} \t {1,15}", stopwatch.ElapsedMilliseconds, stopwatch.ElapsedTicks);
-            return sortedList;
+            return sortedArray;
         }
 
         private int[] DivideSortMerge(int[] arrayToSort, int leftIndex, int rightIndex)

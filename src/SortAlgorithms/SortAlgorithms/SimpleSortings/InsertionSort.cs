@@ -12,10 +12,10 @@ namespace SortAlgorithms.SimpleSortings
     /// </summary>
     internal class InsertionSort : ISort
     {
-        public int[] Sort(int[] list)
+        public int[] Sort(int[] arrayToSort)
         {
-            int[] sortedList = new int[list.Length];
-            sortedList[0] = list[0];
+            int[] sortedArray = new int[arrayToSort.Length];
+            sortedArray[0] = arrayToSort[0];
             int index;
             int sortValue;
 
@@ -23,24 +23,24 @@ namespace SortAlgorithms.SimpleSortings
             stopwatch.Start();
 
             // Algorithm for Insertion Sort
-            for (int i = 1; i < list.Length; i++)
+            for (int i = 1; i < arrayToSort.Length; i++)
             {
-                sortedList[i] = list[i];
-                sortValue = sortedList[i];
+                sortedArray[i] = arrayToSort[i];
+                sortValue = sortedArray[i];
                 index = i - 1;
 
-                while (index >= 0 && sortedList[index] > sortValue)
+                while (index >= 0 && sortedArray[index] > sortValue)
                 {
-                    sortedList[index + 1] = sortedList[index];
+                    sortedArray[index + 1] = sortedArray[index];
                     index--;
                 }
 
-                sortedList[index + 1] = sortValue;
+                sortedArray[index + 1] = sortValue;
             }
 
             stopwatch.Stop();
             Console.WriteLine("Insertion Sort elapsed time(ms) / ticks: {0,10} \t {1,15}", stopwatch.ElapsedMilliseconds, stopwatch.ElapsedTicks);
-            return sortedList;
+            return sortedArray;
         }
     }
 }
