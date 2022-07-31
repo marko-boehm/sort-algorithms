@@ -10,7 +10,7 @@ namespace SortAlgorithms.SimpleSortings
     /// <summary>
     /// Wiki: https://en.wikipedia.org/wiki/Bubble_sort
     /// </summary>
-    internal class BubbleSorting : ISort
+    public class BubbleSorting : ISort
     {
         public int[] Sort(int[] arrayToSort)
         {

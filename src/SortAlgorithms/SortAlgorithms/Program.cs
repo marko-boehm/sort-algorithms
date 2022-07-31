@@ -4,18 +4,15 @@ using SortAlgorithms.DivideAndConquerSortings;
 using SortAlgorithms.SimpleSortings;
 
 
-var randomNumbers = Enumerable.Range(1, 100000).OrderBy(n => Guid.NewGuid()).ToArray(); //100000
+var randomNumbers = Enumerable.Range(1, 10000).OrderBy(n => Guid.NewGuid()).ToArray(); //100000
 
 Console.WriteLine("Comparison of sort algorithms");
 Console.WriteLine("-----------------------------");
 Console.WriteLine($"Count of random numbers: {randomNumbers.Count()}\n");
 
-//Test - ToDo Implement Unit Tests
-//randomNumbers = Enumerable.Range(1, 10).OrderBy(n => Guid.NewGuid()).ToArray();
 //randomNumbers = new int[] { 2, 7, 3, 5, 4, 9, 10, 6, 8, 1 };
 //var sort = new QuickSorting();
 //var sortedList = sort.Sort(randomNumbers);
-
 
 List<ISort> sortAlgorithms = new List<ISort>();
 sortAlgorithms.Add(new SelectionSorting());

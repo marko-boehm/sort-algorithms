@@ -10,7 +10,7 @@ namespace SortAlgorithms.SimpleSortings
     /// <summary>
     /// https://en.wikipedia.org/wiki/Selection_sort
     /// </summary>
-    internal class SelectionSorting : ISort
+    public class SelectionSorting : ISort
     {
         public int[] Sort(int[] arrayToSort)
         {

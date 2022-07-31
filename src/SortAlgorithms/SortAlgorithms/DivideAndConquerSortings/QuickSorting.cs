@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SortAlgorithms.DivideAndConquerSortings
 {
-    internal class QuickSorting : ISort
+    public class QuickSorting : ISort
     {
         public int[] Sort(int[] arrayToSort)
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SortAlgorithms.DivideAndConquerSortings
 {
-    internal class MergeSorting : ISort
+    public class MergeSorting : ISort
     {
         public int[] Sort(int[] arrayToSort)
         {
