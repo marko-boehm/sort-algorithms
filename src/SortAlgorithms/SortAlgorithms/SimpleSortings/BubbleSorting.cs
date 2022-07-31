@@ -8,39 +8,36 @@ using System.Threading.Tasks;
 namespace SortAlgorithms.SimpleSortings
 {
     /// <summary>
-    /// https://en.wikipedia.org/wiki/Selection_sort
+    /// Wiki: https://en.wikipedia.org/wiki/Bubble_sort
     /// </summary>
-    internal class SelectionSort : ISort
+    internal class BubbleSorting : ISort
     {
         public int[] Sort(int[] arrayToSort)
         {
             int[] sortedArray = (int[])arrayToSort.Clone();
-            int minIndex;
-            int minVal;
+            int index = sortedArray.Length - 1;
 
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
 
-            // Algorithm for Selection Sort
-            for (int i = 0; i < sortedArray.Length; i++)
+            // Algorithm for Bubble Sort
+            while (index > 0)
             {
-                minIndex = i;
-                minVal = sortedArray[i];
-                for (int j = i + 1; j < sortedArray.Length; j++)
+                for (int i = 0; i < index; i++)
                 {
-                    if (sortedArray[j] < minVal)
+                    if (sortedArray[i] > sortedArray[i + 1])
                     {
-                        minIndex = j;
-                        minVal = sortedArray[j];
+                        Swap(sortedArray, i, i + 1);
                     }
                 }
-                Swap(sortedArray, i, minIndex);
+                index--;
             }
 
             stopwatch.Stop();
-            Console.WriteLine("Selection Sort elapsed time(ms) / ticks: {0,10} \t {1,15}", stopwatch.ElapsedMilliseconds, stopwatch.ElapsedTicks);
+            Console.WriteLine("Bubble Sort elapsed time(ms) / ticks:\t {0,10} \t {1,15}", stopwatch.ElapsedMilliseconds, stopwatch.ElapsedTicks);
             return sortedArray;
         }
+
 
         private void Swap(int[] sortedList, int i, int j)
         {

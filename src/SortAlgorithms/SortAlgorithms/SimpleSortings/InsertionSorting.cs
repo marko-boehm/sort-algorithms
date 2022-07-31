@@ -10,7 +10,7 @@ namespace SortAlgorithms.SimpleSortings
     /// <summary>
     /// Wiki: https://en.wikipedia.org/wiki/Insertion_sort
     /// </summary>
-    internal class InsertionSort : ISort
+    internal class InsertionSorting : ISort
     {
         public int[] Sort(int[] arrayToSort)
         {

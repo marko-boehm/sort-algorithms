@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SortAlgorithms
 {
-    internal class ArraySortCSharp : ISort
+    internal class ArraySortingCSharp : ISort
     {
         public int[] Sort(int[] arrayToSort)
         {

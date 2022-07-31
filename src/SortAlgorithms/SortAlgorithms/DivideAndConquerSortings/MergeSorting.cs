@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SortAlgorithms.DivideAndConquerSortings
 {
-    internal class MergeSort : ISort
+    internal class MergeSorting : ISort
     {
         public int[] Sort(int[] arrayToSort)
         {
@@ -17,21 +17,22 @@ namespace SortAlgorithms.DivideAndConquerSortings
             stopwatch.Start();
 
             //Algorithm
-            DivideSortMerge(sortedArray, 0, sortedArray.Length - 1);
+            MergeSort(sortedArray, 0, sortedArray.Length - 1);
 
             stopwatch.Stop();
             Console.WriteLine("Merge Sort elapsed time(ms) / ticks:\t {0,10} \t {1,15}", stopwatch.ElapsedMilliseconds, stopwatch.ElapsedTicks);
             return sortedArray;
         }
 
-        private int[] DivideSortMerge(int[] arrayToSort, int leftIndex, int rightIndex)
+        private int[] MergeSort(int[] arrayToSort, int leftIndex, int rightIndex)
         {
             if (leftIndex < rightIndex)
             {
                 var midIndex = (leftIndex + rightIndex) / 2;
 
-                DivideSortMerge(arrayToSort, leftIndex, midIndex);
-                DivideSortMerge(arrayToSort, midIndex + 1, rightIndex);
+                // MergeSort divided array
+                MergeSort(arrayToSort, leftIndex, midIndex);
+                MergeSort(arrayToSort, midIndex + 1, rightIndex);
 
                 SortAndMerge(arrayToSort, leftIndex, midIndex, rightIndex);
             }
