@@ -5,37 +5,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SortAlgorithms
+namespace SortAlgorithms.SimpleSortings
 {
     /// <summary>
     /// Wiki: https://en.wikipedia.org/wiki/Bubble_sort
     /// </summary>
-    internal class BubbleSort : ISort
+    public class BubbleSorting : ISort
     {
-        public int[] Sort(int[] list)
+        public int[] Sort(int[] arrayToSort)
         {
-            int[] sortedList = (int[])list.Clone();
-            int index = sortedList.Length - 1;
+            int[] sortedArray = (int[])arrayToSort.Clone();
+            int index = sortedArray.Length - 1;
 
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            
+
             // Algorithm for Bubble Sort
             while (index > 0)
             {
                 for (int i = 0; i < index; i++)
                 {
-                    if (sortedList[i] > sortedList[i + 1])
+                    if (sortedArray[i] > sortedArray[i + 1])
                     {
-                        Swap(sortedList, i, i + 1);
+                        Swap(sortedArray, i, i + 1);
                     }
                 }
                 index--;
             }
 
             stopwatch.Stop();
-            Console.WriteLine("Bubble Sort elapsed time(ms) / ticks:\t {0,10} \t {1,15}" , stopwatch.ElapsedMilliseconds , stopwatch.ElapsedTicks);
-            return sortedList;
+            Console.WriteLine("Bubble Sort elapsed time(ms) / ticks:\t {0,10} \t {1,15}", stopwatch.ElapsedMilliseconds, stopwatch.ElapsedTicks);
+            return sortedArray;
         }
 
 
